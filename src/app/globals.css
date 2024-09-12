@@ -54,6 +54,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -80,13 +81,24 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  @font-face {
+    font-family: "Open_Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: url(/src/assets/fonts/OpenSans/OpenSans-Italic.ttf) format("ttf"
+      );
   }
 }

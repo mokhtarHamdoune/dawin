@@ -1,12 +1,12 @@
 import { House, BriefcaseBusiness, NotebookPen, LogIn } from "lucide-react"
-type HeaderItem = {
+type navItem = {
     label: string;
     href: string;
     icon?: any;
     description?: string;
 }
 
-export const headerItems: HeaderItem[] = [
+export const navItems: navItem[] = [
     {
         label: "Home",
         href: "/",
@@ -19,10 +19,5 @@ export const headerItems: HeaderItem[] = [
         label: "Editor",
         href: "/editor",
         icon: NotebookPen
-    }, {
-        label: "Login",
-        href: "/login",
-        icon: LogIn
-
     }
 ]
