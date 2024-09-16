@@ -6,17 +6,12 @@ import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
-import { EditorState } from 'lexical';
 // local
-import { OnChangePlugin } from './plugins';
+import { EmojiPlugin } from './plugins';
 import { editorConfig } from './config';
 import { placeholder } from './constants';
 
 function Editor() {
-  const handleOnChange = (editorState: EditorState) => {
-    console.log(editorState);
-  };
-
   return (
     <LexicalComposer initialConfig={editorConfig}>
       <div className="p-10">
@@ -33,8 +28,8 @@ function Editor() {
             }
             ErrorBoundary={LexicalErrorBoundary}
           />
-          <OnChangePlugin onChange={handleOnChange} />
           <AutoFocusPlugin />
+          <EmojiPlugin />
         </div>
       </div>
     </LexicalComposer>

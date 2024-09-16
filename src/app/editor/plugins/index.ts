@@ -1,1 +1,1 @@
-export * from './OnChangePlugin';
+export * from './emoji-plugin/EmojiPlugin';
