@@ -8,6 +8,7 @@ import { editorConfig } from './config';
 import { placeholder } from './constants';
 import { EmojiPlugin } from './plugins';
 import { SidebarTools, EditorWrapper } from './layouts';
+import { FontStyleRow, AlignsRow, TextAndBgColorsRow } from './components/Tools';
 
 function Editor() {
   return (
@@ -39,6 +40,9 @@ function Editor() {
       </EditorWrapper>
       <SidebarTools>
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Text</h4>
+        <FontStyleRow />
+        <AlignsRow />
+        <TextAndBgColorsRow />
       </SidebarTools>
     </div>
   );
