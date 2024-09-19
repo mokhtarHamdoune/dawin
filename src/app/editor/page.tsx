@@ -7,15 +7,14 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { editorConfig } from './config';
 import { placeholder } from './constants';
 import { EmojiPlugin } from './plugins';
-import { SidebarTools, EditorWrapper } from './layouts';
-import { FontStyleRow, AlignsRow, TextAndBgColorsRow } from './components/Tools';
-
+import { EditorSidebar, EditorWrapper } from './layouts';
+import { ToolsSidebar } from './components/ToolsSideBar';
 function Editor() {
   return (
     <div className="flex flex-grow overflow-auto border-t border-gray-300 bg-gray-100 p-4">
-      <SidebarTools>
+      <EditorSidebar>
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Plugins</h4>
-      </SidebarTools>
+      </EditorSidebar>
       <EditorWrapper>
         <LexicalComposer initialConfig={editorConfig}>
           <div className="p-10">
@@ -38,12 +37,7 @@ function Editor() {
           </div>
         </LexicalComposer>
       </EditorWrapper>
-      <SidebarTools>
-        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Text</h4>
-        <FontStyleRow />
-        <AlignsRow />
-        <TextAndBgColorsRow />
-      </SidebarTools>
+      <ToolsSidebar />
     </div>
   );
 }

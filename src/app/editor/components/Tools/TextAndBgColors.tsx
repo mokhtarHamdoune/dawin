@@ -1,7 +1,7 @@
 import { ToolsRow } from './ToolsRow';
 
 import { PaintBucket, Baseline } from 'lucide-react';
-export function TextAndBgColorsRow() {
+export function TextAndBgColors() {
   return (
     <ToolsRow
       tools={[

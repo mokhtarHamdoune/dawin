@@ -1,7 +1,7 @@
 import { ToolsRow } from './ToolsRow';
 import { Bold, Italic, Underline, Strikethrough } from 'lucide-react';
 
-export function FontStyleRow() {
+export function FontStyle() {
   return (
     <ToolsRow
       tools={[

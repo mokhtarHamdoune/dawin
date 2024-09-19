@@ -1,2 +1,2 @@
 export * from './EditorWrapper';
-export * from './ToolsSideBare';
+export * from './EditorSideBare';

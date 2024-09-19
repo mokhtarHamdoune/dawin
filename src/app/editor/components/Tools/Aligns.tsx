@@ -1,7 +1,7 @@
 import { ToolsRow } from './ToolsRow';
 import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from 'lucide-react';
 
-export function AlignsRow() {
+export function Aligns() {
   return (
     <ToolsRow
       tools={[
