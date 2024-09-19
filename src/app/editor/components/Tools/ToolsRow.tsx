@@ -1,9 +1,11 @@
+import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 export type Tool = {
   icon: any;
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
+  isActive?: boolean;
 };
 
 export type ToolsRowProps = {
@@ -20,11 +22,15 @@ export function ToolsRow({ tools, children }: ToolsRowProps) {
       {children === undefined &&
         tools?.map((tool) => (
           <div
-            className="flex flex-1 cursor-pointer items-center justify-center hover:bg-secondary"
+            className={clsx({
+              'flex flex-1 cursor-pointer items-center justify-center hover:bg-secondary': true,
+              'bg-secondary': tool.isActive === true,
+            })}
             aria-describedby={tool.label}
             key={tool.label}
+            onClick={tool.onClick}
           >
-            {<tool.icon />}
+            {<tool.icon size={20} />}
           </div>
         ))}
       {children}

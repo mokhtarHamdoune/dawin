@@ -16,9 +16,9 @@ function Editor() {
       <EditorSidebar>
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Plugins</h4>
       </EditorSidebar>
-      <EditorWrapper>
-        <ImageWrapper />
-        <LexicalComposer initialConfig={editorConfig}>
+      <LexicalComposer initialConfig={editorConfig}>
+        <EditorWrapper>
+          <ImageWrapper />
           <div className="relative mt-4 flex-1 rounded-lg border border-gray-200 bg-white">
             <RichTextPlugin
               contentEditable={
@@ -35,9 +35,9 @@ function Editor() {
             <AutoFocusPlugin defaultSelection="rootEnd" />
             <EmojiPlugin />
           </div>
-        </LexicalComposer>
-      </EditorWrapper>
-      <ToolsSidebar />
+        </EditorWrapper>
+        <ToolsSidebar />
+      </LexicalComposer>
     </div>
   );
 }
