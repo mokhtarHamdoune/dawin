@@ -3,5 +3,5 @@ type EditorWrapperProps = {
 };
 
 export function EditorWrapper({ children }: EditorWrapperProps) {
-  return <div className="flex-1">{children}</div>;
+  return <div className="flex-1 px-4">{children}</div>;
 }

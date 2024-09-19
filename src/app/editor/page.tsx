@@ -9,6 +9,7 @@ import { placeholder } from './constants';
 import { EmojiPlugin } from './plugins';
 import { EditorSidebar, EditorWrapper } from './layouts';
 import { ToolsSidebar } from './components/ToolsSideBar';
+import ImageWrapper from './layouts/ImageWrapper';
 function Editor() {
   return (
     <div className="flex flex-grow overflow-auto border-t border-gray-300 bg-gray-100 p-4">
@@ -16,6 +17,7 @@ function Editor() {
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Plugins</h4>
       </EditorSidebar>
       <EditorWrapper>
+        <ImageWrapper />
         <LexicalComposer initialConfig={editorConfig}>
           <div className="p-10">
             <div className="relative p-1">
