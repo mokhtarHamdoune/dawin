@@ -19,23 +19,21 @@ function Editor() {
       <EditorWrapper>
         <ImageWrapper />
         <LexicalComposer initialConfig={editorConfig}>
-          <div className="p-10">
-            <div className="relative p-1">
-              <RichTextPlugin
-                contentEditable={
-                  <ContentEditable
-                    className="relative h-20 bg-white"
-                    aria-placeholder={placeholder}
-                    placeholder={
-                      <span className="absolute left-3 top-3 text-gray-400"> {placeholder}</span>
-                    }
-                  />
-                }
-                ErrorBoundary={LexicalErrorBoundary}
-              />
-              <AutoFocusPlugin />
-              <EmojiPlugin />
-            </div>
+          <div className="relative mt-4 flex-1 rounded-lg border border-gray-200 bg-white">
+            <RichTextPlugin
+              contentEditable={
+                <ContentEditable
+                  className="h-full p-4 focus:outline-none"
+                  aria-placeholder={placeholder}
+                  placeholder={
+                    <span className="absolute left-4 top-4 text-gray-400"> {placeholder}</span>
+                  }
+                />
+              }
+              ErrorBoundary={LexicalErrorBoundary}
+            />
+            <AutoFocusPlugin defaultSelection="rootEnd" />
+            <EmojiPlugin />
           </div>
         </LexicalComposer>
       </EditorWrapper>

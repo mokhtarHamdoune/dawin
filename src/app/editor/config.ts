@@ -1,15 +1,14 @@
 import { CreateEditorArgs } from 'lexical';
 import path from 'path';
 import { EmojiNode } from './nodes';
+import { InitialConfigType } from '@lexical/react/LexicalComposer';
 
 const editorTheme: CreateEditorArgs['theme'] = {
   ltr: 'ltr',
   rtl: 'rtl',
 };
 
-export const editorConfig: Required<
-  Pick<CreateEditorArgs, 'namespace' | 'theme' | 'onError' | 'nodes'>
-> = {
+export const editorConfig: InitialConfigType = {
   namespace: 'Blog Editor',
   theme: editorTheme,
   nodes: [EmojiNode],

@@ -16,7 +16,7 @@ export type ToolsRowProps = {
 
 export function ToolsRow({ tools, children }: ToolsRowProps) {
   return (
-    <div className="flex h-10 w-full divide-x overflow-hidden rounded-lg border border-gray-300">
+    <div className="flex h-10 w-full divide-x overflow-hidden rounded-lg border border-gray-200">
       {children === undefined &&
         tools?.map((tool) => (
           <div
