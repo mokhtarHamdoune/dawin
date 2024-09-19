@@ -10,6 +10,9 @@ import { EmojiPlugin } from './plugins';
 import { EditorSidebar, EditorWrapper } from './layouts';
 import { ToolsSidebar } from './components/ToolsSideBar';
 import ImageWrapper from './layouts/ImageWrapper';
+// style of the editor
+import './style.css';
+
 function Editor() {
   return (
     <div className="flex flex-grow overflow-auto border-t border-gray-300 bg-gray-100 p-4">

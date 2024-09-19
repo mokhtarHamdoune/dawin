@@ -1,13 +1,12 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { ToolsRow } from './ToolsRow';
 import { Bold, Italic, Underline, Strikethrough } from 'lucide-react';
-import { COMMAND_PRIORITY_LOW, FORMAT_TEXT_COMMAND } from 'lexical';
-import { useEffect } from 'react';
+import { FORMAT_TEXT_COMMAND } from 'lexical';
 import { useToolsState } from '../../hooks/useTools';
 
 export function FontStyle() {
   const [editor] = useLexicalComposerContext();
-  const { boldState } = useToolsState();
+  const { boldState, italicState, underlineState, strikethroughState } = useToolsState();
 
   return (
     <ToolsRow
@@ -23,17 +22,26 @@ export function FontStyle() {
         {
           icon: Italic,
           label: 'italic',
-          onClick: () => {},
+          onClick: () => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic');
+          },
+          isActive: italicState,
         },
         {
           icon: Underline,
           label: 'underline',
-          onClick: () => {},
+          onClick: () => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline');
+          },
+          isActive: underlineState,
         },
         {
           icon: Strikethrough,
           label: 'strike through',
-          onClick: () => {},
+          onClick: () => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough');
+          },
+          isActive: strikethroughState,
         },
       ]}
     />

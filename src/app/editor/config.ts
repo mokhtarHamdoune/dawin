@@ -6,6 +6,13 @@ import { InitialConfigType } from '@lexical/react/LexicalComposer';
 const editorTheme: CreateEditorArgs['theme'] = {
   ltr: 'ltr',
   rtl: 'rtl',
+  text: {
+    bold: 'editor-text-bold',
+    italic: 'editor-text-italic',
+    strikethrough: 'editor-text-strikethrough',
+    underline: 'editor-text-underline',
+    underlineStrikethrough: 'editor-text-underlineStrikethrough',
+  },
 };
 
 export const editorConfig: InitialConfigType = {
