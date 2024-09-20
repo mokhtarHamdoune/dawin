@@ -1,4 +1,4 @@
-export * from './Aligns';
+export * from './TextAligns';
 export * from './FontStyle';
 export * from './TextAndBgColors';
 export * from './FontSize';

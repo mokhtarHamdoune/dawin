@@ -2,7 +2,7 @@ import { EditorSidebar } from '../layouts';
 import Contributor from './Contributor';
 import {
   FontStyle,
-  Aligns,
+  TextAligns,
   TextAndBgColors,
   FontSize,
   FontFamily,
@@ -19,7 +19,7 @@ export function ToolsSidebar() {
         <BlocType />
         <FontSize />
         <FontStyle />
-        <Aligns />
+        <TextAligns />
         <TextAndBgColors />
         <EmojiLinkCode />
       </div>
