@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import {
-  $getSelection,
-  $isElementNode,
-  $isRangeSelection,
-  ElementFormatType,
-  ParagraphNode,
-} from 'lexical';
+// lexical and its packages
+import { $getSelection, $isParagraphNode, $isRangeSelection, ElementFormatType } from 'lexical';
+import { $getSelectionStyleValueForProperty } from '@lexical/selection';
+import { DEFAULT_FONT_SIZE } from '../components/Tools';
+
 export type ToolsStates = {
   boldState: boolean;
   italicState: boolean;
   underlineState: boolean;
   strikethroughState: boolean;
   textAlign: ElementFormatType;
+  fontSize: string;
 };
 
 export const useToolsState = () => {
@@ -23,16 +22,20 @@ export const useToolsState = () => {
     underlineState: false,
     strikethroughState: false,
     textAlign: 'left',
+    fontSize: DEFAULT_FONT_SIZE,
   });
+
   const $updateToolbar = useCallback(() => {
     const selection = $getSelection();
-
     if ($isRangeSelection(selection)) {
-      const parentNode = selection.focus.getNode().getParent();
+      const currentNode = selection.focus.getNode();
+      const parentNode = currentNode.getParent();
       let textAlign: ElementFormatType = 'left';
-      if (parentNode !== null) {
+      if (parentNode !== null && $isParagraphNode(parentNode)) {
         textAlign = parentNode.getFormatType();
       }
+      let fontMatch = $getSelectionStyleValueForProperty(selection, 'font-size').match(/\d+/g);
+      let fontSize = fontMatch !== null && fontMatch.length > 0 ? fontMatch[0] : DEFAULT_FONT_SIZE;
       // Update text format
       setToolsState({
         boldState: selection.hasFormat('bold'),
@@ -40,6 +43,7 @@ export const useToolsState = () => {
         underlineState: selection.hasFormat('underline'),
         strikethroughState: selection.hasFormat('strikethrough'),
         textAlign: textAlign,
+        fontSize: fontSize,
       });
     }
   }, []);

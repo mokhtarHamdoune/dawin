@@ -1,3 +1,4 @@
+import { Button, ButtonProps } from '@/components/ui/button';
 import clsx from 'clsx';
 import { ReactNode } from 'react';
 
@@ -16,22 +17,36 @@ export type ToolsRowProps = {
   children?: ReactNode;
 };
 
+export type ToolsBtnProps = ButtonProps & { isActive?: boolean };
+
+export function ToolsBtn({ children, isActive, ...rest }: ToolsBtnProps) {
+  return (
+    <Button
+      className={clsx({
+        'flex flex-1 cursor-pointer items-center justify-center bg-white text-black hover:text-white':
+          true,
+        'bg-primary text-white': isActive === true,
+      })}
+      {...rest}
+    >
+      {children}
+    </Button>
+  );
+}
+
 export function ToolsRow({ tools, children }: ToolsRowProps) {
   return (
-    <div className="flex h-10 w-full divide-x overflow-hidden rounded-lg border border-gray-200">
+    <div className="rounded-lgd flex h-10 w-full gap-x-2 overflow-hidden p-0.5">
       {children === undefined &&
         tools?.map((tool) => (
-          <div
-            className={clsx({
-              'flex flex-1 cursor-pointer items-center justify-center hover:bg-secondary': true,
-              'bg-secondary': tool.isActive === true,
-            })}
+          <ToolsBtn
             aria-describedby={tool.label}
             key={tool.label}
             onClick={tool.onClick}
+            isActive={tool.isActive}
           >
             {<tool.icon size={20} />}
-          </div>
+          </ToolsBtn>
         ))}
       {children}
     </div>
