@@ -1,8 +1,8 @@
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { ToolsRow } from './ToolsRow';
-import { Bold, Italic, Underline, Strikethrough } from 'lucide-react';
-import { FORMAT_TEXT_COMMAND } from 'lexical';
-import { useToolsState } from '../../hooks/useTools';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { ToolsRow } from "./ToolsRow";
+import { Bold, Italic, Underline, Strikethrough } from "lucide-react";
+import { FORMAT_TEXT_COMMAND } from "lexical";
+import { useToolsState } from "../../hooks/useTools";
 
 export function FontStyle() {
   const [editor] = useLexicalComposerContext();
@@ -13,33 +13,33 @@ export function FontStyle() {
       tools={[
         {
           icon: Bold,
-          label: 'bold',
+          label: "bold",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
           },
           isActive: boldState,
         },
         {
           icon: Italic,
-          label: 'italic',
+          label: "italic",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic');
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
           },
           isActive: italicState,
         },
         {
           icon: Underline,
-          label: 'underline',
+          label: "underline",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline');
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline");
           },
           isActive: underlineState,
         },
         {
           icon: Strikethrough,
-          label: 'strike through',
+          label: "strike through",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough');
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough");
           },
           isActive: strikethroughState,
         },

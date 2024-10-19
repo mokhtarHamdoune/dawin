@@ -1,1 +1,1 @@
-export const placeholder = 'Your text goes here ...';
+export const placeholder = "Your text goes here ...";

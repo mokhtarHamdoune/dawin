@@ -1,9 +1,9 @@
-'use client';
-import { MobilNav, MainNav } from '../NavLinks';
-import { DawinLogo } from '@/assets/icons';
-import { Button } from '../ui/button';
-import { Menu, XIcon } from 'lucide-react';
-import { useState } from 'react';
+"use client";
+import { MobilNav, MainNav } from "../NavLinks";
+import { DawinLogo } from "@/assets/icons";
+import { Button } from "../ui/button";
+import { Menu, XIcon } from "lucide-react";
+import { useState } from "react";
 
 function Header() {
   const [isMobileNavOpen, toggleMobileMenu] = useState(false);

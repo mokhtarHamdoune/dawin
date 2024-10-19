@@ -1,1 +1,1 @@
-export * from './emoji-plugin/EmojiPlugin';
+export * from "./emoji-plugin/EmojiPlugin";

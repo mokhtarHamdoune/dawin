@@ -1,17 +1,17 @@
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { useToolsState } from '../../hooks/useTools';
-import { ToolsBtn, ToolsRow } from './ToolsRow';
-import { Plus, Minus } from 'lucide-react';
-import { $getSelection } from 'lexical';
-import { $patchStyleText } from '@lexical/selection';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { useToolsState } from "../../hooks/useTools";
+import { ToolsBtn, ToolsRow } from "./ToolsRow";
+import { Plus, Minus } from "lucide-react";
+import { $getSelection } from "lexical";
+import { $patchStyleText } from "@lexical/selection";
 import {
   Select,
   SelectItem,
   SelectContent,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-export const DEFAULT_FONT_SIZE = '14';
+} from "@/components/ui/select";
+export const DEFAULT_FONT_SIZE = "14";
 // TODO: when you select a paragraph the and size is not correct the input should be empty
 
 export const FONT_SIZES = [8, 9, 10, 11, 12, 13, 14, 18, 24, 30, 36, 48, 60, 72, 96];
@@ -33,7 +33,7 @@ export function FontSize() {
       const selection = $getSelection();
       if (selection !== null) {
         $patchStyleText(selection, {
-          'font-size': newFontSize + 'px',
+          "font-size": newFontSize + "px",
         });
       }
     });

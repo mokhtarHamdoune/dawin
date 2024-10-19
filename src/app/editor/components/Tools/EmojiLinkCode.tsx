@@ -1,5 +1,5 @@
-import { ToolsRow } from './ToolsRow';
-import { Code, Link, Smile } from 'lucide-react';
+import { ToolsRow } from "./ToolsRow";
+import { Code, Link, Smile } from "lucide-react";
 
 export function EmojiLinkCode() {
   return (
@@ -7,17 +7,17 @@ export function EmojiLinkCode() {
       tools={[
         {
           icon: Smile,
-          label: 'emojis',
+          label: "emojis",
           onClick: () => {},
         },
         {
           icon: Link,
-          label: 'link',
+          label: "link",
           onClick: () => {},
         },
         {
           icon: Code,
-          label: 'code',
+          label: "code",
           onClick: () => {},
         },
       ]}

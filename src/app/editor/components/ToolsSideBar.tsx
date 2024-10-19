@@ -1,5 +1,5 @@
-import { EditorSidebar } from '../layouts';
-import Contributor from './Contributor';
+import { EditorSidebar } from "../layouts";
+import Contributor from "./Contributor";
 import {
   FontStyle,
   TextAligns,
@@ -8,7 +8,7 @@ import {
   FontFamily,
   BlocType,
   EmojiLinkCode,
-} from './Tools';
+} from "./Tools";
 
 export function ToolsSidebar() {
   return (

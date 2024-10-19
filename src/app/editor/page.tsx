@@ -1,17 +1,17 @@
-'use client';
-import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
-import { LexicalComposer } from '@lexical/react/LexicalComposer';
-import { ContentEditable } from '@lexical/react/LexicalContentEditable';
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
-import { editorConfig } from './config';
-import { placeholder } from './constants';
-import { EmojiPlugin } from './plugins';
-import { EditorSidebar, EditorWrapper } from './layouts';
-import { ToolsSidebar } from './components/ToolsSideBar';
-import ImageWrapper from './layouts/ImageWrapper';
+"use client";
+import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { editorConfig } from "./config";
+import { placeholder } from "./constants";
+import { EmojiPlugin } from "./plugins";
+import { EditorSidebar, EditorWrapper } from "./layouts";
+import { ToolsSidebar } from "./components/ToolsSideBar";
+import ImageWrapper from "./layouts/ImageWrapper";
 // style of the editor
-import './style.css';
+import "./style.css";
 
 function Editor() {
   return (

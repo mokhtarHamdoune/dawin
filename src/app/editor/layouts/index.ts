@@ -1,3 +1,3 @@
-export * from './EditorWrapper';
-export * from './EditorSideBare';
-export * from './ImageWrapper';
+export * from "./EditorWrapper";
+export * from "./EditorSideBare";
+export * from "./ImageWrapper";

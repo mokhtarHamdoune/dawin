@@ -1,6 +1,6 @@
-import { SelectValue } from '@radix-ui/react-select';
-import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
-import { ToolsRow } from './ToolsRow';
+import { SelectValue } from "@radix-ui/react-select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
+import { ToolsRow } from "./ToolsRow";
 export function BlocType() {
   return (
     <ToolsRow>

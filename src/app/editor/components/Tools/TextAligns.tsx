@@ -1,8 +1,8 @@
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { useToolsState } from '../../hooks/useTools';
-import { ToolsRow } from './ToolsRow';
-import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from 'lucide-react';
-import { FORMAT_ELEMENT_COMMAND } from 'lexical';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { useToolsState } from "../../hooks/useTools";
+import { ToolsRow } from "./ToolsRow";
+import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from "lucide-react";
+import { FORMAT_ELEMENT_COMMAND } from "lexical";
 
 export function TextAligns() {
   const [editor] = useLexicalComposerContext();
@@ -13,35 +13,35 @@ export function TextAligns() {
       tools={[
         {
           icon: AlignLeft,
-          label: 'align left',
+          label: "align left",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left");
           },
-          isActive: textAlign === 'left',
+          isActive: textAlign === "left",
         },
         {
           icon: AlignCenter,
-          label: 'align center',
+          label: "align center",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center');
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center");
           },
-          isActive: textAlign === 'center',
+          isActive: textAlign === "center",
         },
         {
           icon: AlignRight,
-          label: 'align right',
+          label: "align right",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right');
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right");
           },
-          isActive: textAlign === 'right',
+          isActive: textAlign === "right",
         },
         {
           icon: AlignJustify,
-          label: 'align justify',
+          label: "align justify",
           onClick: () => {
-            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify');
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify");
           },
-          isActive: textAlign === 'justify',
+          isActive: textAlign === "justify",
         },
       ]}
     />

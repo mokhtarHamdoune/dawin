@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import { useCallback, useEffect, useState } from "react";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 // lexical and its packages
-import { $getSelection, $isParagraphNode, $isRangeSelection, ElementFormatType } from 'lexical';
-import { $getSelectionStyleValueForProperty } from '@lexical/selection';
-import { DEFAULT_FONT_SIZE } from '../components/Tools';
+import { $getSelection, $isParagraphNode, $isRangeSelection, ElementFormatType } from "lexical";
+import { $getSelectionStyleValueForProperty } from "@lexical/selection";
+import { DEFAULT_FONT_SIZE } from "../components/Tools";
 
 export type ToolsStates = {
   boldState: boolean;
@@ -21,7 +21,7 @@ export const useToolsState = () => {
     italicState: false,
     underlineState: false,
     strikethroughState: false,
-    textAlign: 'left',
+    textAlign: "left",
     fontSize: DEFAULT_FONT_SIZE,
   });
 
@@ -30,19 +30,19 @@ export const useToolsState = () => {
     if ($isRangeSelection(selection)) {
       const currentNode = selection.focus.getNode();
       const parentNode = currentNode.getParent();
-      let textAlign: ElementFormatType = 'left';
+      let textAlign: ElementFormatType = "left";
       if (parentNode !== null && $isParagraphNode(parentNode)) {
         textAlign = parentNode.getFormatType();
       }
-      const fontMatch = $getSelectionStyleValueForProperty(selection, 'font-size').match(/\d+/g);
+      const fontMatch = $getSelectionStyleValueForProperty(selection, "font-size").match(/\d+/g);
       const fontSize =
         fontMatch !== null && fontMatch.length > 0 ? fontMatch[0] : DEFAULT_FONT_SIZE;
       // Update text format
       setToolsState({
-        boldState: selection.hasFormat('bold'),
-        italicState: selection.hasFormat('italic'),
-        underlineState: selection.hasFormat('underline'),
-        strikethroughState: selection.hasFormat('strikethrough'),
+        boldState: selection.hasFormat("bold"),
+        italicState: selection.hasFormat("italic"),
+        underlineState: selection.hasFormat("underline"),
+        strikethroughState: selection.hasFormat("strikethrough"),
         textAlign: textAlign,
         fontSize: fontSize,
       });

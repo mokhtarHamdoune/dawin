@@ -1,4 +1,4 @@
-import { NodeKey, SerializedTextNode, TextNode } from 'lexical';
+import { NodeKey, SerializedTextNode, TextNode } from "lexical";
 
 interface SerializedEmojiNode extends SerializedTextNode {
   unifiedID: string;
@@ -8,7 +8,7 @@ export class EmojiNode extends TextNode {
   __unifiedID: string;
 
   static getType(): string {
-    return 'emoji';
+    return "emoji";
   }
 
   static clone(node: EmojiNode): EmojiNode {
@@ -16,7 +16,7 @@ export class EmojiNode extends TextNode {
   }
 
   constructor(unifiedID: string, key?: NodeKey) {
-    const unicodeEmoji = String.fromCodePoint(...unifiedID.split('-').map((v) => parseInt(v, 16)));
+    const unicodeEmoji = String.fromCodePoint(...unifiedID.split("-").map((v) => parseInt(v, 16)));
     super(unicodeEmoji, key);
     this.__unifiedID = unifiedID.toLocaleLowerCase();
   }
@@ -28,7 +28,7 @@ export class EmojiNode extends TextNode {
   exportJSON(): SerializedEmojiNode {
     return {
       ...super.exportJSON(),
-      type: 'emoji',
+      type: "emoji",
       unifiedID: this.__unifiedID,
     };
   }
@@ -41,7 +41,7 @@ export function $createEmojiNode(unifiedID: string): TextNode {
     // but are deleted as a single entity (not invdividually by character).
     // This also forces Lexical to create adjacent TextNode on user input instead of
     // modifying Emoji node as it now acts as immutable node.
-    .setMode('token');
+    .setMode("token");
 
   return node;
 }

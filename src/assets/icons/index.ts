@@ -1,1 +1,1 @@
-export * from "./dawin-logo-v2"
+export * from "./dawin-logo-v2";

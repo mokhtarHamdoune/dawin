@@ -1,7 +1,7 @@
-import { Button, ButtonProps } from '@/components/ui/button';
-import clsx from 'clsx';
-import { LucideIcon } from 'lucide-react';
-import { ReactNode } from 'react';
+import { Button, ButtonProps } from "@/components/ui/button";
+import clsx from "clsx";
+import { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
 
 export type Tool = {
   icon: LucideIcon;
@@ -24,9 +24,9 @@ export function ToolsBtn({ children, isActive, ...rest }: ToolsBtnProps) {
   return (
     <Button
       className={clsx({
-        'flex flex-1 cursor-pointer items-center justify-center bg-white text-black hover:text-white':
+        "flex flex-1 cursor-pointer items-center justify-center bg-white text-black hover:text-white":
           true,
-        'bg-primary text-white': isActive === true,
+        "bg-primary text-white": isActive === true,
       })}
       {...rest}
     >

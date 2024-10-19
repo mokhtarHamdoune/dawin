@@ -2,15 +2,15 @@
 // provided in Lexical Gettings Started
 // https://lexical.dev/docs/getting-started/creating-plugin
 
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { TextNode, Transform } from 'lexical';
-import { mergeRegister } from '@lexical/utils';
-import { useEffect } from 'react';
-import { findEmoji } from './utils';
-import { $createEmojiNode } from '../../nodes';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { TextNode, Transform } from "lexical";
+import { mergeRegister } from "@lexical/utils";
+import { useEffect } from "react";
+import { findEmoji } from "./utils";
+import { $createEmojiNode } from "../../nodes";
 
 const emojiTransform: Transform<TextNode> = (node) => {
-  if (!node.isSimpleText() || node.hasFormat('code')) {
+  if (!node.isSimpleText() || node.hasFormat("code")) {
     return;
   }
 
