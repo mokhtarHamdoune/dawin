@@ -13,7 +13,7 @@ Its still under implimentation !
 - [x] Text Style like **Bold**, **Italic**, **Underline**, **StrikeThrough**
 - [x] Text Aligments **Left**, **Right**, **Center**, **Justify**
 - [x] Text to Emoji
-- [] Basic Text Elemnets **Headers**, **Quotes**, **Paragraphe**,
+- [] Basic Text Elements **Headers**, **Quotes**, **Paragraphe**,
 - [] Text Color
 - [] Text Background Color
 - [] Text Font Size

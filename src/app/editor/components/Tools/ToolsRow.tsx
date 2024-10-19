@@ -1,9 +1,10 @@
 import { Button, ButtonProps } from '@/components/ui/button';
 import clsx from 'clsx';
+import { LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 
 export type Tool = {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   onClick?: () => void;
   isActive?: boolean;
@@ -36,7 +37,7 @@ export function ToolsBtn({ children, isActive, ...rest }: ToolsBtnProps) {
 
 export function ToolsRow({ tools, children }: ToolsRowProps) {
   return (
-    <div className="rounded-lgd flex h-10 w-full gap-x-2 overflow-hidden p-0.5">
+    <div className="flex h-10 w-full gap-x-2 overflow-hidden rounded-lg p-0.5">
       {children === undefined &&
         tools?.map((tool) => (
           <ToolsBtn

@@ -4,8 +4,13 @@ import { ToolsBtn, ToolsRow } from './ToolsRow';
 import { Plus, Minus } from 'lucide-react';
 import { $getSelection } from 'lexical';
 import { $patchStyleText } from '@lexical/selection';
-import { Select, SelectItem, SelectContent } from '@/components/ui/select';
-import { SelectTrigger, SelectValue } from '@radix-ui/react-select';
+import {
+  Select,
+  SelectItem,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 export const DEFAULT_FONT_SIZE = '14';
 // TODO: when you select a paragraph the and size is not correct the input should be empty
 

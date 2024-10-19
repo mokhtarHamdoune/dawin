@@ -34,8 +34,9 @@ export const useToolsState = () => {
       if (parentNode !== null && $isParagraphNode(parentNode)) {
         textAlign = parentNode.getFormatType();
       }
-      let fontMatch = $getSelectionStyleValueForProperty(selection, 'font-size').match(/\d+/g);
-      let fontSize = fontMatch !== null && fontMatch.length > 0 ? fontMatch[0] : DEFAULT_FONT_SIZE;
+      const fontMatch = $getSelectionStyleValueForProperty(selection, 'font-size').match(/\d+/g);
+      const fontSize =
+        fontMatch !== null && fontMatch.length > 0 ? fontMatch[0] : DEFAULT_FONT_SIZE;
       // Update text format
       setToolsState({
         boldState: selection.hasFormat('bold'),

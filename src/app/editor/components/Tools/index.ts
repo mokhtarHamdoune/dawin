@@ -1,6 +1,6 @@
 export * from './TextAligns';
 export * from './FontStyle';
-export * from './TextAndBgColors';
+export * from './TextColors';
 export * from './FontSize';
 export * from './FontFamily';
 export * from './BlocType';

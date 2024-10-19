@@ -5,7 +5,7 @@ export function BlocType() {
   return (
     <ToolsRow>
       <Select>
-        <SelectTrigger className="h-full rounded-lg border-none">
+        <SelectTrigger className="h-full border border-gray-100">
           <SelectValue placeholder="Normal" />
         </SelectTrigger>
         <SelectContent>

@@ -5,7 +5,7 @@ export function FontFamily() {
   return (
     <ToolsRow>
       <Select>
-        <SelectTrigger className="h-full rounded-lg border-none">
+        <SelectTrigger className="h-full border border-gray-100 shadow-sm">
           <SelectValue placeholder="font" />
         </SelectTrigger>
         <SelectContent>

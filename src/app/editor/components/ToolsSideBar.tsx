@@ -3,7 +3,7 @@ import Contributor from './Contributor';
 import {
   FontStyle,
   TextAligns,
-  TextAndBgColors,
+  TextColors,
   FontSize,
   FontFamily,
   BlocType,
@@ -12,7 +12,7 @@ import {
 
 export function ToolsSidebar() {
   return (
-    <EditorSidebar>
+    <EditorSidebar className="hidden min-w-56 max-w-72 lg:block lg:w-2/5 xl:w-1/5">
       <h4 className="mb-2 scroll-m-20 text-xl font-semibold tracking-tight">Text</h4>
       <div className="flex flex-col gap-y-3">
         <FontFamily />
@@ -20,7 +20,7 @@ export function ToolsSidebar() {
         <FontSize />
         <FontStyle />
         <TextAligns />
-        <TextAndBgColors />
+        <TextColors />
         <EmojiLinkCode />
       </div>
       <h4 className="my-2 scroll-m-20 text-xl font-semibold tracking-tight">Contributors</h4>
