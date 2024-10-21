@@ -1,12 +1,12 @@
 import { Button, ButtonProps } from "@/components/ui/button";
 import clsx from "clsx";
 import { LucideIcon } from "lucide-react";
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export type Tool = {
   icon: LucideIcon;
   label: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   isActive?: boolean;
 };
 

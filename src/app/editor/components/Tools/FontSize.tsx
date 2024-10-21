@@ -11,7 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-export const DEFAULT_FONT_SIZE = "14";
 // TODO: when you select a paragraph the and size is not correct the input should be empty
 
 export const FONT_SIZES = [8, 9, 10, 11, 12, 13, 14, 18, 24, 30, 36, 48, 60, 72, 96];
