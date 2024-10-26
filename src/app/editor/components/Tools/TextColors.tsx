@@ -8,6 +8,7 @@ import { useToolsState } from "../../hooks/useTools";
 import { $getSelection } from "lexical";
 import { $patchStyleText } from "@lexical/selection";
 import ColorPicker from "@/components/ColorPicker";
+import { DEFAULT_BG_COLOR, DEFAULT_COLOR } from "../../constants";
 
 type Picker = {
   type: "text" | "bg";
@@ -43,9 +44,35 @@ export function TextColors() {
           }
         }
       });
+
+      setColorsVisible((prev) => ({ ...prev, visible: false }));
     },
     [editor, picker.type],
   );
+
+  const handleResetColor = useCallback(() => {
+    editor.update(() => {
+      const selection = $getSelection();
+      if (selection) {
+        if (picker.type === "text") {
+          $patchStyleText(selection, {
+            color: DEFAULT_COLOR,
+          });
+        }
+        if (picker.type === "bg") {
+          $patchStyleText(selection, {
+            "background-color": DEFAULT_BG_COLOR,
+          });
+        }
+      }
+    });
+
+    setColorsVisible((prev) => ({ ...prev, visible: false }));
+  }, [editor, picker.type]);
+
+  const handleColorPickerClose = () => {
+    setColorsVisible((prev) => ({ ...prev, visible: false }));
+  };
 
   return (
     <>
@@ -60,7 +87,7 @@ export function TextColors() {
             <div
               className={`h-1 w-full`}
               style={{
-                backgroundColor: textColor,
+                backgroundColor: textColor || DEFAULT_COLOR,
               }}
             />
           </div>
@@ -75,7 +102,7 @@ export function TextColors() {
             <div
               className={`h-1 w-full`}
               style={{
-                backgroundColor: bgColor,
+                backgroundColor: bgColor || DEFAULT_BG_COLOR,
               }}
             />
           </div>
@@ -85,6 +112,8 @@ export function TextColors() {
         color={picker.type === "text" ? textColor : bgColor}
         open={picker.visible}
         onChange={handleColorChange}
+        onClose={handleColorPickerClose}
+        onReset={handleResetColor}
       />
     </>
   );

@@ -14,8 +14,8 @@ Its still under implimentation !
 - [x] Text Aligments **Left**, **Right**, **Center**, **Justify**
 - [x] Text to Emoji
 - [] Basic Text Elements **Headers**, **Quotes**, **Paragraphe**,
-- [] Text Color
-- [] Text Background Color
+- [x] Text Color
+- [x] Text Background Color
 - [] Text Font Size
 - [] Insert Bloc of code
 - [] Insert an image

@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
 import { Color, ColorChangeHandler, SketchPicker } from "react-color";
 import { Button } from "../ui/button";
 
@@ -7,37 +6,42 @@ type ColorPickerProps = {
   open: boolean;
   color?: Color;
   onChange?: ColorChangeHandler;
-  onOpenChange?: (open: boolean) => void;
+  onClose?: () => void;
+  onReset?: () => void;
 };
 
-// TODO: custom picket wher I can hide the pop over the dom is not usable
-const ColorPicker = ({ onOpenChange, ...props }: ColorPickerProps) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleOpenChange = (ev: MouseEvent) => {
-      if (ref.current && ref.current.contains(ev.target as Node)) {
-        onOpenChange && onOpenChange(true);
-      } else {
-        onOpenChange && onOpenChange(false);
-      }
-    };
-
-    document.addEventListener("click", handleOpenChange);
-    return () => document.removeEventListener("click", handleOpenChange);
-  }, [onOpenChange]);
-
+const ColorPicker = ({ onClose, onReset, ...props }: ColorPickerProps) => {
   return (
     <div className="relative">
       <div
         className={clsx({
-          "absolute left-[4%] top-0 z-20 border border-slate-100 bg-white p-1": true,
+          "absolute left-[4%] top-0 z-20": true,
           hidden: !props.open,
         })}
-        ref={ref}
       >
-        <Button variant={"link"}>rest</Button>
-        <SketchPicker onChange={props.onChange} color={props.color} width="220px" disableAlpha />
+        <Button variant={"link"} className="absolute -top-1 text-gray-300" onClick={onReset}>
+          reset
+        </Button>
+        <Button
+          variant={"link"}
+          className="absolute -top-1 right-0 text-slate-400"
+          onClick={onClose}
+        >
+          close
+        </Button>
+        <SketchPicker
+          onChange={props.onChange}
+          color={props.color}
+          styles={{
+            default: {
+              picker: {
+                paddingTop: 28,
+                paddingInline: 18,
+              },
+            },
+          }}
+          disableAlpha
+        />
       </div>
     </div>
   );
