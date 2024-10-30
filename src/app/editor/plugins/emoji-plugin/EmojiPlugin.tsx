@@ -21,7 +21,6 @@ const emojiTransform: Transform<TextNode> = (node) => {
     return null;
   }
   let targetNode: TextNode | null = null;
-  let rest: any;
   if (match.position === 0) {
     // const result = node.splitText(match.shortcode.length);
     [targetNode] = node.splitText(match.position + match.shortcode.length);
